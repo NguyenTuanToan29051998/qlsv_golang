@@ -1,0 +1,694 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "beego Test API",
+        "description": "beego has a very cool tools to autogenerate documents for your API",
+        "version": "1.0.0",
+        "termsOfService": "http://beego.me/",
+        "contact": {
+            "email": "astaxie@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "basePath": "/v1",
+    "paths": {
+        "/class/": {
+            "post": {
+                "tags": [
+                    "class"
+                ],
+                "description": "create Lop",
+                "operationId": "ClassController.CreateClass",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for class content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Lop"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{int} models.Lop"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/class/add_st_to_class": {
+            "post": {
+                "tags": [
+                    "class"
+                ],
+                "description": "create Lop",
+                "operationId": "ClassController.AddSTtoClass",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for user content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CrudST"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{int} models.CrudST"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/class/add_teacher_to_class": {
+            "post": {
+                "tags": [
+                    "class"
+                ],
+                "description": "create Lop",
+                "operationId": "ClassController.AddGVtoClass",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for user content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CrudGV"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{int} models.CrudGV"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/class/delete_st_in_class": {
+            "delete": {
+                "tags": [
+                    "class"
+                ],
+                "description": "create Lop",
+                "operationId": "ClassController.DeleteSTInClass",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for user content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CrudST"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{int} models.CrudST"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/class/delete_teacher_in_class": {
+            "delete": {
+                "tags": [
+                    "class"
+                ],
+                "description": "create Lop",
+                "operationId": "ClassController.DeleteTeacherInClass",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for user content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CrudGV"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{int} models.CrudGV"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/class/list/": {
+            "get": {
+                "tags": [
+                    "class"
+                ],
+                "description": "get all Users",
+                "operationId": "ClassController.GetAll",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Lop"
+                        }
+                    }
+                }
+            }
+        },
+        "/class/{uid}": {
+            "get": {
+                "tags": [
+                    "class"
+                ],
+                "description": "get user by uid",
+                "operationId": "ClassController.Get",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "uid",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Lop"
+                        }
+                    },
+                    "403": {
+                        "description": ":uid is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "class"
+                ],
+                "description": "update the user",
+                "operationId": "ClassController.Update",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "uid",
+                        "description": "The uid you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for user content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Lop"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{lop} models.Lop"
+                    },
+                    "403": {
+                        "description": ":uid is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "class"
+                ],
+                "description": "delete the lop",
+                "operationId": "ClassController.DeleteClass",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "uid",
+                        "description": "The uid you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success! models.Lop true"
+                    },
+                    "403": {
+                        "description": "uid is empty"
+                    }
+                }
+            }
+        },
+        "/student/": {
+            "post": {
+                "tags": [
+                    "student"
+                ],
+                "description": "create ST",
+                "operationId": "STController.CreateST",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for student content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.SinhVien"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{int} models.SinhVien"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/student/find_st": {
+            "get": {
+                "tags": [
+                    "student"
+                ],
+                "description": "get all dssv",
+                "operationId": "STController.FindST",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "key",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.SinhVien"
+                        }
+                    }
+                }
+            }
+        },
+        "/student/list/": {
+            "get": {
+                "tags": [
+                    "student"
+                ],
+                "description": "get all Users",
+                "operationId": "STController.GetAll",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.SinhVien"
+                        }
+                    }
+                }
+            }
+        },
+        "/student/{uid}": {
+            "get": {
+                "tags": [
+                    "student"
+                ],
+                "description": "get user by uid",
+                "operationId": "STController.Get",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "uid",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.SinhVien"
+                        }
+                    },
+                    "403": {
+                        "description": ":uid is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "student"
+                ],
+                "description": "update the user",
+                "operationId": "STController.Update",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "uid",
+                        "description": "The uid you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for user content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.SinhVien"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.SinhVien"
+                        }
+                    },
+                    "403": {
+                        "description": ":uid is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "student"
+                ],
+                "description": "delete the SinhVien",
+                "operationId": "STController.DeleteST",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "uid",
+                        "description": "The uid you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success! models.SinhVien true"
+                    },
+                    "403": {
+                        "description": "uid is empty"
+                    }
+                }
+            }
+        },
+        "/teacher/": {
+            "post": {
+                "tags": [
+                    "teacher"
+                ],
+                "description": "create ST",
+                "operationId": "TeacherController.CreateGV",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for teacher content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.GiaoVien"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{int} models.GiaoVien.MaGV"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/teacher/find_teacher": {
+            "get": {
+                "tags": [
+                    "teacher"
+                ],
+                "description": "get all dsgv",
+                "operationId": "TeacherController.FindGV",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "key",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.GiaoVien"
+                        }
+                    }
+                }
+            }
+        },
+        "/teacher/list/": {
+            "get": {
+                "tags": [
+                    "teacher"
+                ],
+                "description": "get all Users",
+                "operationId": "TeacherController.GetAll",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.GiaoVien"
+                        }
+                    }
+                }
+            }
+        },
+        "/teacher/{uid}": {
+            "get": {
+                "tags": [
+                    "teacher"
+                ],
+                "description": "get user by uid",
+                "operationId": "TeacherController.Get",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "uid",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.GiaoVien"
+                        }
+                    },
+                    "403": {
+                        "description": ":uid is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "teacher"
+                ],
+                "description": "update the user",
+                "operationId": "TeacherController.Update",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "uid",
+                        "description": "The uid you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for user content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.GiaoVien"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.GiaoVien"
+                        }
+                    },
+                    "403": {
+                        "description": ":uid is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "teacher"
+                ],
+                "description": "delete the GiaoVien",
+                "operationId": "TeacherController.DeleteST",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "uid",
+                        "description": "The uid you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success! models.GiaoVien true"
+                    },
+                    "403": {
+                        "description": "uid is empty"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "models.CrudGV": {
+            "title": "CrudGV",
+            "type": "object",
+            "properties": {
+                "ma_gv": {
+                    "type": "string"
+                },
+                "ma_lop": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CrudST": {
+            "title": "CrudST",
+            "type": "object",
+            "properties": {
+                "ma_lop": {
+                    "type": "string"
+                },
+                "ma_sv": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.GiaoVien": {
+            "title": "GiaoVien",
+            "type": "object",
+            "properties": {
+                "ds_lop": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ma_gv": {
+                    "type": "string"
+                },
+                "mat_khau": {
+                    "type": "string"
+                },
+                "tai_khoan": {
+                    "type": "string"
+                },
+                "ten_gv": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Lop": {
+            "title": "Lop",
+            "type": "object",
+            "properties": {
+                "dsgv": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "dssv": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ma_lop": {
+                    "type": "string"
+                },
+                "ten_lop": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.SinhVien": {
+            "title": "SinhVien",
+            "type": "object",
+            "properties": {
+                "ds_lop": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ma_sv": {
+                    "type": "string"
+                },
+                "mat_khau": {
+                    "type": "string"
+                },
+                "tai_khoan": {
+                    "type": "string"
+                },
+                "ten_sv": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "student",
+            "description": "Operations about SinhVien\n"
+        },
+        {
+            "name": "class",
+            "description": "Operations about SinhVien\n"
+        },
+        {
+            "name": "teacher",
+            "description": "Operations about GiaoVien\n"
+        }
+    ]
+}
