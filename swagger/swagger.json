@@ -662,13 +662,13 @@
                         "type": "string"
                     }
                 },
+                "gioi_tinh": {
+                    "type": "string"
+                },
                 "ma_sv": {
                     "type": "string"
                 },
-                "mat_khau": {
-                    "type": "string"
-                },
-                "tai_khoan": {
+                "que_quan": {
                     "type": "string"
                 },
                 "ten_sv": {

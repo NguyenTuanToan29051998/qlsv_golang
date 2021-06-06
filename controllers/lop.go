@@ -68,12 +68,8 @@ func (u *ClassController) GetAll() {
 func (u *ClassController) Get() {
 	uid := u.GetString(":uid")
 	if uid != "" {
-		st, err := models.GetClass(uid)
-		if err != nil {
-			u.Data["json"] = err.Error()
-		} else {
-			u.Data["json"] = st
-		}
+		lp := models.GetClass(uid)
+		u.Data["json"] = lp
 	}
 	u.ServeJSON()
 }

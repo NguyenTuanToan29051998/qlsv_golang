@@ -1,7 +1,6 @@
 package models
 
 import (
-	"errors"
 	"log"
 )
 
@@ -34,12 +33,14 @@ type Lop struct {
 	DSGV   []string `json:"dsgv"`
 }
 
-func GetClass(uid string) (lop *Lop, err error) {
-	if lop, ok := dslop[uid]; ok {
-		return lop, nil
+func GetClass(uid string) []*Lop {
+	values := []*Lop{}
+	for _, value := range dslop {
+		if value == dslop[uid] {
+			values = append(values, value)
+		}
 	}
-	return nil, errors.New("SinhVien not exists")
-
+	return values
 }
 func GetAllClass() []*Lop {
 	values := []*Lop{}
@@ -57,8 +58,8 @@ func AddClass(lp Lop) string {
 		}
 		// thêm lop vào sv
 		dssv[item].DSLop = append(dssv[item].DSLop, lp.MaLop)
-
 	}
+
 	for _, item := range lp.DSGV {
 		if dsgv[item] == nil {
 			return "Giao vien chua ton tai"

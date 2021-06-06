@@ -12,16 +12,16 @@ var (
 type SinhVien struct {
 	MaSV     string   `json:"ma_sv"`
 	TenSV    string   `json:"ten_sv"`
-	GiơiTinh string   `json:"tai_khoan"`
-	QueQuan  string   `json:"mat_khau"`
+	GiơiTinh string   `json:"gioi_tinh"`
+	QueQuan  string   `json:"que_quan"`
 	DSLop    []string `json:"ds_lop"`
 }
 
 type SV struct {
 	MaSV     string `json:"ma_sv"`
 	TenSV    string `json:"ten_sv"`
-	GiơiTinh string `json:"tai_khoan"`
-	QueQuan  string `json:"mat_khau"`
+	GiơiTinh string `json:"gioi_tinh"`
+	QueQuan  string `json:"que_quan"`
 }
 
 func AddST(st SinhVien) string {
@@ -39,8 +39,8 @@ func AddST(st SinhVien) string {
 }
 func init() {
 	dssv = make(map[string]*SinhVien)
-	u := SinhVien{"123", "toan", "toan", "123", []string{}}
-	u1 := SinhVien{"1234", "dd", "dd", "111", []string{}}
+	u := SinhVien{"123", "Nguyễn Tuấn Toàn", "Nam", "MC", []string{}}
+	u1 := SinhVien{"1234", "Nguyễn Tuấn Việt", "Nam", "QN", []string{}}
 	dssv["123"] = &u
 	dssv["1234"] = &u1
 }
